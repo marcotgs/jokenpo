@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  game:
+    image: jokenpo/game-service:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 4100:4100
+    # depends_on:
+    #   - mongodb
+  # mongodb:
+  #   image: mongo:latest
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: root
+  #     MONGO_INITDB_ROOT_PASSWORD: rootpassword
+  #   ports:
+  #     - 27017:27017
+  #   volumes:
+  #     - mongodb_data_container:/data/db
+# volumes:
+#   mongodb_data_container:

@@ -1,0 +1,20 @@
+apps:
+  - script: ./scripts/start.js
+    name: "backend/api-gateway"
+    exec_mode: cluster
+    cwd: ./backend/api-gateway
+
+  - script: ./scripts/start.js
+    name: "backend/game"
+    exec_mode: cluster
+    cwd: ./backend/game
+
+  - script: ./scripts/start.js
+    name: "backend/player"
+    exec_mode: cluster
+    cwd: ./backend/player
+
+  - script: ./scripts/start.js
+    name: "frontend"
+    exec_mode: cluster
+    cwd: ./frontend

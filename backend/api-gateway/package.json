@@ -1,0 +1,27 @@
+{
+  "name": "@jokenpo/api-gateway",
+  "version": "1.0.0",
+  "description": "Backend gateway using Apollo",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "package": "sls package",
+    "start": "sls offline"
+  },
+  "keywords": [
+    "google cloud",
+    "serverless"
+  ],
+  "dependencies": {
+    "@apollo/federation": "^0.22.0",
+    "@apollo/gateway": "^0.24.4",
+    "apollo-server-cloud-functions": "^2.21.0",
+    "serverless-google-cloudfunctions": "^3.1.1"
+  },
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^1.7.1",
+    "dotenv-webpack": "^7.0.0",
+    "serverless": "^2.29.0",
+    "serverless-webpack": "^5.3.5"
+  }
+}

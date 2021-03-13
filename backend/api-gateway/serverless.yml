@@ -1,0 +1,38 @@
+service: api-gateway
+
+provider:
+  name: google
+  project: my-project-1234 #google account project name
+  credentials: ~/.gcloud/keyfile.json # path must be absolute
+  stage: dev
+  runtime: nodejs12
+  region: us-central1
+  memorySize: 128
+  timeout: 45s
+
+  environment: # these will be created as application settings
+    VARIABLE_FOO: "foo"
+
+plugins: # look for additional plugins in the community plugins repo: https://github.com/serverless/plugins
+  - serverless-webpack
+  - serverless-google-cloudfunctions
+
+# you can add packaging information here
+package:
+  individually: false
+  exclude:
+    - package.json
+    - local.settings.json
+    - .vscode/**
+
+functions:
+  api:
+    handler: src/api.gatewayHandler
+    events:
+      - http: true
+        authLevel: anonymous
+        methods:
+          - GET
+          - POST
+      - http: false
+        name: $return

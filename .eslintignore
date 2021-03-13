@@ -1,0 +1,7 @@
+dist
+node_modules
+*.eslintrc.js
+*/**/*.e2e-spec.*
+*/**/*.spec.*
+*/**/*.test.*
+**/scripts/*.js
